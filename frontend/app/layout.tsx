@@ -39,7 +39,7 @@ export default function RootLayout({
                   Home
                 </a>
                 <a
-                  href="https://github.com"
+                  href="https://github.com/Rattan344/EthicsLense-Audit"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center gap-1.5 text-gray-400 hover:text-white text-sm transition-colors"
