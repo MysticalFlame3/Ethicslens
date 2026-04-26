@@ -1,6 +1,6 @@
 const API_BASE = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8000'
 
-export async function uploadDataset(file: File): Promise<{ session_id: string }> {
+export async function uploadDataset(file: File): Promise<{ id: string }> {
   const formData = new FormData()
   formData.append('file', file)
 

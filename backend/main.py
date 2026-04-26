@@ -65,7 +65,8 @@ async def run_audit(file: UploadFile = File(...), db: Session = Depends(get_db))
 
     try:
         if ext == 'csv':
-            df = pd.read_csv(io.BytesIO(content))
+            # Use engine='python' and sep=None to auto-detect delimiters (comma, semicolon, tab)
+            df = pd.read_csv(io.BytesIO(content), sep=None, engine='python', on_bad_lines='warn')
         elif ext in ('json', 'jsonl'):
             try:
                 df = pd.read_json(io.BytesIO(content))

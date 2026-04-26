@@ -52,8 +52,8 @@ export default function UploadForm() {
     setLoading(true)
     setError(null)
     try {
-      const { session_id } = await uploadDataset(file)
-      router.push(`/results/${session_id}`)
+      const { id } = await uploadDataset(file)
+      router.push(`/results/${id}`)
     } catch (err: unknown) {
       setError(err instanceof Error ? err.message : 'Audit failed. Please try again.')
       setLoading(false)
